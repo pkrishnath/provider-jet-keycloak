@@ -22,14 +22,46 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/crossplane-contrib/provider-jet-template/apis/null/v1alpha1"
-	v1alpha1apis "github.com/crossplane-contrib/provider-jet-template/apis/v1alpha1"
+	v1alpha1 "github.com/crossplane-contrib/provider-jet-keycloak/apis/attribute/v1alpha1"
+	v1alpha1authentication "github.com/crossplane-contrib/provider-jet-keycloak/apis/authentication/v1alpha1"
+	v1alpha1custom "github.com/crossplane-contrib/provider-jet-keycloak/apis/custom/v1alpha1"
+	v1alpha1default "github.com/crossplane-contrib/provider-jet-keycloak/apis/default/v1alpha1"
+	v1alpha1generic "github.com/crossplane-contrib/provider-jet-keycloak/apis/generic/v1alpha1"
+	v1alpha1group "github.com/crossplane-contrib/provider-jet-keycloak/apis/group/v1alpha1"
+	v1alpha1hardcoded "github.com/crossplane-contrib/provider-jet-keycloak/apis/hardcoded/v1alpha1"
+	v1alpha1identity "github.com/crossplane-contrib/provider-jet-keycloak/apis/identity/v1alpha1"
+	v1alpha1keycloak "github.com/crossplane-contrib/provider-jet-keycloak/apis/keycloak/v1alpha1"
+	v1alpha1ldap "github.com/crossplane-contrib/provider-jet-keycloak/apis/ldap/v1alpha1"
+	v1alpha1oidc "github.com/crossplane-contrib/provider-jet-keycloak/apis/oidc/v1alpha1"
+	v1alpha1openid "github.com/crossplane-contrib/provider-jet-keycloak/apis/openid/v1alpha1"
+	v1alpha1realm "github.com/crossplane-contrib/provider-jet-keycloak/apis/realm/v1alpha1"
+	v1alpha1required "github.com/crossplane-contrib/provider-jet-keycloak/apis/required/v1alpha1"
+	v1alpha1saml "github.com/crossplane-contrib/provider-jet-keycloak/apis/saml/v1alpha1"
+	v1alpha1user "github.com/crossplane-contrib/provider-jet-keycloak/apis/user/v1alpha1"
+	v1alpha1users "github.com/crossplane-contrib/provider-jet-keycloak/apis/users/v1alpha1"
+	v1alpha1apis "github.com/crossplane-contrib/provider-jet-keycloak/apis/v1alpha1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1authentication.SchemeBuilder.AddToScheme,
+		v1alpha1custom.SchemeBuilder.AddToScheme,
+		v1alpha1default.SchemeBuilder.AddToScheme,
+		v1alpha1generic.SchemeBuilder.AddToScheme,
+		v1alpha1group.SchemeBuilder.AddToScheme,
+		v1alpha1hardcoded.SchemeBuilder.AddToScheme,
+		v1alpha1identity.SchemeBuilder.AddToScheme,
+		v1alpha1keycloak.SchemeBuilder.AddToScheme,
+		v1alpha1ldap.SchemeBuilder.AddToScheme,
+		v1alpha1oidc.SchemeBuilder.AddToScheme,
+		v1alpha1openid.SchemeBuilder.AddToScheme,
+		v1alpha1realm.SchemeBuilder.AddToScheme,
+		v1alpha1required.SchemeBuilder.AddToScheme,
+		v1alpha1saml.SchemeBuilder.AddToScheme,
+		v1alpha1user.SchemeBuilder.AddToScheme,
+		v1alpha1users.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 	)
 }
