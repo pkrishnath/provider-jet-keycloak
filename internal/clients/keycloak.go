@@ -43,7 +43,7 @@ const (
 )
 
 const (
-	clientId = "client_id"
+	clientID = "client_id"
 	username = "username"
 	password = "password"
 	url      = "url"
@@ -89,7 +89,7 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		// set provider configuration
 
 		ps.Configuration = map[string]interface{}{
-			clientId: keycloakCreds[clientId],
+			clientID: keycloakCreds[clientID],
 			username: keycloakCreds[username],
 			url:      keycloakCreds[url],
 		}
