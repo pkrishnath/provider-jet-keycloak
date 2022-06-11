@@ -32,6 +32,8 @@ import (
 )
 
 const (
+	fmtEnvVar = "%s=%s"
+
 	// error messages
 	errNoProviderConfig     = "no providerConfigRef provided"
 	errGetProviderConfig    = "cannot get referenced ProviderConfig"
@@ -41,10 +43,10 @@ const (
 )
 
 const (
-	clientId      = "client_id"
-	username 	  = "username"
-	password	  = "password"
-	url      	  = "url"
+	clientId = "client_id"
+	username = "username"
+	password = "password"
+	url      = "url"
 
 	envPassword = "ADMIN_PASSWORD"
 )
@@ -84,13 +86,12 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 			return ps, errors.Wrap(err, errUnmarshalCredentials)
 		}
 
-
 		// set provider configuration
 
 		ps.Configuration = map[string]interface{}{
-			clientId:      keycloakCreds[clientId],
+			clientId: keycloakCreds[clientId],
 			username: keycloakCreds[username],
-			url: keycloakCreds[url],
+			url:      keycloakCreds[url],
 		}
 
 		// set environment variables for sensitive provider configuration
